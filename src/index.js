@@ -1,12 +1,36 @@
 import express from "express";
-import renderer from "./helpers/renderer";
+import React from "react";
+import { renderToString } from "react-dom/server";
+import { ApolloProvider } from "@apollo/client";
+import { getDataFromTree } from "@apollo/client/react/ssr";
+import { StaticRouter } from "react-router-dom";
+import { Html } from "./helpers/html";
+import createClient from "./helpers/createClinet";
+import Routes from "./client/Routes";
 
 const app = express();
 
 app.use(express.static("public"));
 
 app.get("*", (req, res) => {
-  res.send(renderer(req));
+  const client = createClient(req);
+
+  const context = {};
+  const App = (
+    <ApolloProvider client={client}>
+      <StaticRouter location={req.path} context={context}>
+        <Routes />
+      </StaticRouter>
+    </ApolloProvider>
+  );
+
+  getDataFromTree(App).then((content) => {
+    const initialState = client.extract();
+
+    const html = <Html content={content} state={initialState} />;
+
+    res.send(`<!doctype html>\n${renderToString(html)}`);
+  });
 });
 
 const port = process.env.PORT || 3000;
