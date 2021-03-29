@@ -22467,7 +22467,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var client = new _client.ApolloClient({
   cache: new _client.InMemoryCache().restore(window.__APOLLO_STATE__),
-  uri: "http://localhost:4000/graphql"
+  uri: "/graphql"
 });
 
 _reactDom2.default.hydrate(_react2.default.createElement(
@@ -63187,8 +63187,11 @@ var Login = function (_Component) {
   _createClass(Login, [{
     key: "UNSAFE_componentWillUpdate",
     value: function UNSAFE_componentWillUpdate(nextProps) {
-      console.log(nextProps, this.props.data);
-      if (!this.props.data.user && nextProps.data.user) {}
+      console.log(nextProps, "next");
+      console.log(this.props, "per");
+      if (!this.props.data.user && nextProps.data.user) {
+        this.props.history.push("/");
+      }
     }
   }, {
     key: "onSubmit",

@@ -1,7 +1,8 @@
 import express from "express";
 import React from "react";
+import { createProxyMiddleware } from "http-proxy-middleware";
 import { renderToString } from "react-dom/server";
-import { ApolloProvider } from "@apollo/client";
+import { ApolloProvider, fromError } from "@apollo/client";
 import { getDataFromTree } from "@apollo/client/react/ssr";
 import { StaticRouter } from "react-router-dom";
 import { Html } from "./helpers/html";
@@ -9,6 +10,14 @@ import createClient from "./helpers/createClinet";
 import Routes from "./client/Routes";
 
 const app = express();
+
+app.use(
+  "/graphql",
+  createProxyMiddleware({
+    target: "http://localhost:4000/graphql",
+    changeOrigin: true,
+  })
+);
 
 app.use(express.static("public"));
 

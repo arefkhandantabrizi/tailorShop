@@ -8,12 +8,18 @@ export default (req) => {
     link: createHttpLink({
       uri: "http://localhost:4000/graphql",
       fetch,
-      credentials: "same-origin",
-      headers: {
-        cookie: req.header("Cookie"),
+      fetchOptions: {
+        origin: ["http://localhost:3000", "http://localhost:4000 "],
+        allowedHeaders: ["Content-Type", "Authorization"],
+        credentials: "include",
       },
+      credentials: "include",
     }),
+    headers: {
+      cookie: req.get("cookie") || "",
+    },
     cache: new InMemoryCache(),
   });
+
   return client;
 };

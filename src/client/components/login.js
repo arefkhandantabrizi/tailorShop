@@ -11,8 +11,10 @@ class Login extends Component {
   }
 
   UNSAFE_componentWillUpdate(nextProps) {
-    console.log(nextProps, this.props.data);
+    console.log(nextProps, "next");
+    console.log(this.props, "per");
     if (!this.props.data.user && nextProps.data.user) {
+      this.props.history.push("/");
     }
   }
   onSubmit({ username, password }) {
