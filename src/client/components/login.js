@@ -10,13 +10,18 @@ class Login extends Component {
     this.state = { errors: [] };
   }
 
-  UNSAFE_componentWillUpdate(nextProps) {
-    console.log(nextProps, "next");
-    console.log(this.props, "per");
-    if (!this.props.data.user && nextProps.data.user) {
+  componentDidMount() {
+    if (this.props.data.user) {
       this.props.history.push("/");
     }
   }
+
+  componentDidUpdate(preProps) {
+    if (this.props.data.user && !preProps.data.user) {
+      this.props.history.push("/");
+    }
+  }
+
   onSubmit({ username, password }) {
     this.props
       .mutate({
@@ -33,6 +38,9 @@ class Login extends Component {
   }
 
   render() {
+    if (this.props.data.user) {
+      return <div> </div>;
+    }
     return (
       <div>
         <h1>ورود</h1>

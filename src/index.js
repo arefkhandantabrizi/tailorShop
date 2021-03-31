@@ -2,7 +2,7 @@ import express from "express";
 import React from "react";
 import { createProxyMiddleware } from "http-proxy-middleware";
 import { renderToString } from "react-dom/server";
-import { ApolloProvider, fromError } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
 import { getDataFromTree } from "@apollo/client/react/ssr";
 import { StaticRouter } from "react-router-dom";
 import { Html } from "./helpers/html";
