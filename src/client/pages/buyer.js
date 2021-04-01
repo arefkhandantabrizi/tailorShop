@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { graphql } from "@apollo/client/react/hoc";
 import query from "../queries/buyers";
+import { Helmet } from "react-helmet";
 
 class Buyer extends Component {
   constructor(props) {
@@ -24,6 +25,10 @@ class Buyer extends Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>لیست خریداران</title>
+          <meta property="og:title" content="لیست خریداران" />
+        </Helmet>
         <ul>{this.renderUsers()}</ul>
         <button onClick={() => console.log("well done")}>Press me!</button>
       </div>

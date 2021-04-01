@@ -1,5 +1,6 @@
 import express from "express";
 import React from "react";
+import { Helmet } from "react-helmet";
 import { createProxyMiddleware } from "http-proxy-middleware";
 import { renderToString } from "react-dom/server";
 import { ApolloProvider } from "@apollo/client";
@@ -38,7 +39,21 @@ app.get("*", (req, res) => {
 
     const html = <Html content={content} state={initialState} />;
 
-    res.send(`<!doctype html>\n${renderToString(html)}`);
+    const bodyContent = `${renderToString(html)}`;
+
+    const helmet = Helmet.renderStatic();
+
+    const result = `<!doctype html>\n<html><head>${helmet.title.toString()}${helmet.meta.toString()}</head>${bodyContent}</html>`;
+
+    if (context.url) {
+      return res.redirect(301, context.url);
+    }
+
+    if (context.notFound) {
+      res.status(404);
+    }
+
+    res.send(result);
   });
 });
 

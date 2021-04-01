@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { graphql } from "@apollo/client/react/hoc";
 import mutation from "../mutations/loginMutation";
 import query from "../queries/currentUser";
-import AuthForm from "./AuthForm";
+import AuthForm from "../components/AuthForm";
 
 class Login extends Component {
   constructor(props) {

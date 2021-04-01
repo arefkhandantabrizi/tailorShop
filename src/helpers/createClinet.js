@@ -1,6 +1,5 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import fetch from "cross-fetch";
-import cookie from "react-cookie";
 
 export default (req) => {
   const client = new ApolloClient({
