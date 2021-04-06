@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
+import Header from "./components/header";
 import requireAuth from "./components/hocs/requireAuth";
 import Buyer from "./pages/buyer";
 import DashBoard from "./pages/dashboard";
@@ -9,7 +10,8 @@ import NotFound from "./pages/notFound";
 
 export default () => {
   return (
-    <div>
+    <Fragment>
+      <Header />
       <Switch>
         <Route exact path="/home" component={Home} />
         <Route path="/buyers" component={Buyer} />
@@ -19,6 +21,6 @@ export default () => {
         <Redirect from="/" exact to="/home" />
         <Redirect to="/notFound" />
       </Switch>
-    </div>
+    </Fragment>
   );
 };

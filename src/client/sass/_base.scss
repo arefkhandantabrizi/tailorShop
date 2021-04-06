@@ -1,0 +1,94 @@
+// COLOR VARIABLES
+$color-primary: #422671;
+// $color-primary-dark: #b28451;
+// $color-primary-light: #e2a764;
+
+$color-secondary: #fec859;
+
+$color-tertiary: #ff3e96;
+// $color-tertiary-dark: #42b0b4;
+
+$color-quaternary: #800000;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #e3e3e3;
+$color-grey-dark-2: #6d5d4b;
+$color-gray-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+// FONT VARIABLES
+$font-primary: iransansdn, tahoma;
+$font-display: iransansdn, tahoma;
+
+$boder-radius: 5px;
+
+//Responsive breakpoints
+$bp-largest: 100rem; //1600px
+$bp-larger: 75rem; // 1200px
+$bp-large: 62.5rem; // 1000px
+$bp-medium: 50rem; // 800px
+$bp-small: 37.5rem; // 600px
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.6%;
+
+  @media only screen and (max-width: $bp-larger) {
+    font-size: 55%;
+  }
+  @media only screen and (max-width: $bp-large) {
+    font-size: 51%;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 45%;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  // color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.6;
+  direction: rtl;
+}
+
+.Toastify__toast-container {
+  right: 0;
+  font-size: 1.3rem;
+}
+
+.container {
+  // background-color: rgba($color-grey-light-1, 0.5);
+  width: 120rem;
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-rows: min-content minmax(60vh, max-content);
+  grid-template-columns:
+    [sidebar-start] 10rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr) [full-end];
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: min-content minmax(70vh, max-content);
+  }
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: min-content minmax(90vw, max-content);
+  }
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: min-content min-content minmax(90vw, max-content);
+  }
+}

@@ -1,0 +1,129 @@
+.navbar {
+  grid-column: 1/-1;
+  background-color: $color-primary;
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+  color: $color-grey-light-1;
+  padding: 1.4rem 1.6rem;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+
+  &--link {
+    float: none;
+    color: $color-grey-light-1;
+    padding: 1.2rem 1.6rem;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    &:not(:last-child) {
+      border-bottom: 0.1rem solid $color-grey-light-1;
+    }
+  }
+
+  &-content {
+    display: none;
+    padding-top: 1.2rem;
+    position: absolute;
+    color: $color-grey-light-1;
+    background-color: $color-primary;
+    min-width: 14rem;
+    box-shadow: 0rem 0.8rem 1.6rem 0rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.sitePart {
+  display: flex;
+  flex: 0 0 70%;
+  align-items: center;
+}
+
+.userPart {
+  display: flex;
+  flex: 0 0 30%;
+  justify-content: flex-end;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  font-size: 1.4rem;
+
+  &__user {
+    align-self: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  &__item {
+    // color: $color-grey-light-1;
+    cursor: pointer;
+
+    &--link:link,
+    &--link:visited {
+      color: $color-grey-light-1;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    &--icon {
+      fill: $color-grey-light-1;
+      align-self: center;
+      height: 2.3rem;
+      width: 2.3rem;
+
+      &-user {
+        margin-right: 5rem;
+      }
+    }
+
+    &--logo {
+      height: 6rem;
+      align-self: center;
+    }
+  }
+
+  &__item:not(:last-child) {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  &__item:last-child {
+    align-self: center;
+    padding-right: 1.5rem;
+    padding-left: 5rem;
+  }
+
+  &__item:first-child {
+    padding-right: 2rem;
+  }
+
+  &__item:not(:first-child) {
+    align-self: center;
+  }
+}
+
+.vl {
+  border-left: 0.1rem solid $color-grey-light-1;
+  height: 3.5rem;
+  justify-self: center;
+}

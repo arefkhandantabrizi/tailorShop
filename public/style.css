@@ -1,0 +1,162 @@
+@font-face {
+  font-family: iransansdn;
+  font-style: normal;
+  font-weight: bold;
+  src: url(fonts/iransansdnbold.eot);
+  src: url(fonts/iransansdnbold.eot?#iefix) format("embedded-opentype"), url(fonts/iransansdnbold.woff2) format("woff2"), url(fonts/iransansdnbold.woff) format("woff"), url(fonts/iransansdnbold.ttf) format("truetype"); }
+
+@font-face {
+  font-family: iransansdn;
+  font-style: normal;
+  font-weight: 300;
+  src: url(fonts/iransansdnlight.eot);
+  src: url(fonts/iransansdnlight.eot?#iefix) format("embedded-opentype"), url(fonts/iransansdnlight.woff2) format("woff2"), url(fonts/iransansdnlight.woff) format("woff"), url(fonts/iransansdnlight.ttf) format("truetype"); }
+
+@font-face {
+  font-family: iransansdn;
+  font-style: normal;
+  font-weight: normal;
+  src: url(fonts/iransansdn.eot);
+  src: url(fonts/iransansdn.eot?#iefix) format("embedded-opentype"), url(fonts/iransansdn.woff2) format("woff2"), url(fonts/iransansdn.woff) format("woff"), url(fonts/iransansdn.ttf) format("truetype"); }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.6%; }
+  @media only screen and (max-width: 75rem) {
+    html {
+      font-size: 55%; } }
+  @media only screen and (max-width: 62.5rem) {
+    html {
+      font-size: 51%; } }
+  @media only screen and (max-width: 50rem) {
+    html {
+      font-size: 45%; } }
+
+body {
+  font-family: iransansdn, tahoma;
+  font-weight: 300;
+  line-height: 1.6;
+  direction: rtl; }
+
+.Toastify__toast-container {
+  right: 0;
+  font-size: 1.3rem; }
+
+.container {
+  width: 120rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: min-content minmax(60vh, max-content);
+  grid-template-columns: [sidebar-start] 10rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  @media only screen and (max-width: 62.5rem) {
+    .container {
+      grid-template-rows: min-content minmax(70vh, max-content); } }
+  @media only screen and (max-width: 50rem) {
+    .container {
+      grid-template-rows: min-content minmax(90vw, max-content); } }
+  @media only screen and (max-width: 37.5rem) {
+    .container {
+      grid-template-rows: min-content min-content minmax(90vw, max-content); } }
+
+.navbar {
+  grid-column: 1/-1;
+  background-color: #422671; }
+
+.dropdown {
+  float: right;
+  overflow: hidden; }
+
+.dropdown .dropbtn {
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+  color: #f9f7f6;
+  padding: 1.4rem 1.6rem;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0; }
+
+.dropdown {
+  float: right;
+  overflow: hidden; }
+  .dropdown--link {
+    float: none;
+    color: #f9f7f6;
+    padding: 1.2rem 1.6rem;
+    text-decoration: none;
+    display: block;
+    text-align: center; }
+    .dropdown--link:not(:last-child) {
+      border-bottom: 0.1rem solid #f9f7f6; }
+  .dropdown-content {
+    display: none;
+    padding-top: 1.2rem;
+    position: absolute;
+    color: #f9f7f6;
+    background-color: #422671;
+    min-width: 14rem;
+    box-shadow: 0rem 0.8rem 1.6rem 0rem rgba(0, 0, 0, 0.2);
+    z-index: 1; }
+
+.dropdown:hover .dropdown-content {
+  display: block; }
+
+.sitePart {
+  display: flex;
+  flex: 0 0 70%;
+  align-items: center; }
+
+.userPart {
+  display: flex;
+  flex: 0 0 30%;
+  justify-content: flex-end; }
+
+.nav {
+  display: flex;
+  list-style: none;
+  font-size: 1.4rem; }
+  .nav__user {
+    align-self: center;
+    padding-left: 2rem;
+    padding-right: 2rem; }
+  .nav__item {
+    cursor: pointer; }
+    .nav__item--link:link, .nav__item--link:visited {
+      color: #f9f7f6;
+      list-style: none;
+      text-decoration: none; }
+    .nav__item--icon {
+      fill: #f9f7f6;
+      align-self: center;
+      height: 2.3rem;
+      width: 2.3rem; }
+      .nav__item--icon-user {
+        margin-right: 5rem; }
+    .nav__item--logo {
+      height: 6rem;
+      align-self: center; }
+  .nav__item:not(:last-child) {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem; }
+  .nav__item:last-child {
+    align-self: center;
+    padding-right: 1.5rem;
+    padding-left: 5rem; }
+  .nav__item:first-child {
+    padding-right: 2rem; }
+  .nav__item:not(:first-child) {
+    align-self: center; }
+
+.vl {
+  border-left: 0.1rem solid #f9f7f6;
+  height: 3.5rem;
+  justify-self: center; }
+
