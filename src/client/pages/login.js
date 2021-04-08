@@ -3,6 +3,7 @@ import { graphql } from "@apollo/client/react/hoc";
 import mutation from "../mutations/loginMutation";
 import query from "../queries/currentUser";
 import AuthForm from "../components/AuthForm";
+import login from "../img/login.webp";
 
 class Login extends Component {
   constructor(props) {
@@ -42,9 +43,18 @@ class Login extends Component {
       return <div> </div>;
     }
     return (
-      <div>
-        <h1>ورود</h1>
+      <div className="login">
+        <h1 className="login__header">ورود به حساب کاربری</h1>
+        <img className="login__img" src="img/login.webp" />
         <AuthForm
+          formClassName="login__form"
+          inputClassName="login__form--input"
+          passwordClassName="login__form--input login__form--passwordinput"
+          buttonClassName="btn btn-primary login__form--btn"
+          eyebuttonClassName="login__form--eyebtn"
+          lineClassName="login__form--line"
+          iconClassName="login__form--icon"
+          linkClassName="login__form--link"
           errors={this.state.errors}
           onSubmit={this.onSubmit.bind(this)}
         />

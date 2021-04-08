@@ -12,11 +12,7 @@ class Header extends Component {
   }
 
   renderUser() {
-    const { user, loading, error } = this.props.data;
-
-    if (loading) {
-      return <div></div>;
-    }
+    const { user } = this.props.data;
 
     if (user) {
       return (
@@ -45,7 +41,7 @@ class Header extends Component {
 
   render() {
     return (
-      <di className="navbar">
+      <section className="navbar">
         <ul className="nav">
           <div className="sitePart">
             <li className="nav__item">
@@ -60,9 +56,7 @@ class Header extends Component {
             <div className="vl" />
             <li className="nav__item">
               <div className="dropdown">
-                <Link className="nav__item--link dropbtn" to="">
-                  سفارش لباس فرم
-                </Link>
+                <div className="nav__item--link dropbtn">سفارش لباس فرم</div>
                 <div className="dropdown-content">
                   <Link className="nav__item--link dropdown--link" to="/order">
                     لباس فرم پسرانه
@@ -104,12 +98,12 @@ class Header extends Component {
           <div className="userPart">
             <li className="nav__user">
               <div className="dropdown">
-                <Link className="nav__item--link" to="">
+                <div className="nav__item--link">
                   <Icon
                     className="nav__item--icon nav__item--icon-user"
                     name="icon-user"
                   />
-                </Link>
+                </div>
                 <div className="dropdown-content">{this.renderUser()}</div>
               </div>
             </li>
@@ -123,7 +117,7 @@ class Header extends Component {
             </li>
           </div>
         </ul>
-      </di>
+      </section>
     );
   }
 }

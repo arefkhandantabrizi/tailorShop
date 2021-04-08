@@ -28,6 +28,9 @@
   -webkit-tap-highlight-color: transparent; }
 
 html {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
   box-sizing: border-box;
   font-size: 62.6%; }
   @media only screen and (max-width: 75rem) {
@@ -39,6 +42,9 @@ html {
   @media only screen and (max-width: 50rem) {
     html {
       font-size: 45%; } }
+  @media only screen and (max-width: 37.5rem) {
+    html {
+      font-size: 37%; } }
 
 body {
   font-family: iransansdn, tahoma;
@@ -51,24 +57,14 @@ body {
   font-size: 1.3rem; }
 
 .container {
-  width: 120rem;
-  margin: 0 auto;
   display: grid;
   grid-template-rows: min-content minmax(60vh, max-content);
   grid-template-columns: [sidebar-start] 10rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
-  @media only screen and (max-width: 62.5rem) {
-    .container {
-      grid-template-rows: min-content minmax(70vh, max-content); } }
-  @media only screen and (max-width: 50rem) {
-    .container {
-      grid-template-rows: min-content minmax(90vw, max-content); } }
-  @media only screen and (max-width: 37.5rem) {
-    .container {
-      grid-template-rows: min-content min-content minmax(90vw, max-content); } }
 
 .navbar {
   grid-column: 1/-1;
-  background-color: #422671; }
+  background-color: #422671;
+  min-height: 7rem; }
 
 .dropdown {
   float: right;
@@ -83,10 +79,18 @@ body {
   background-color: inherit;
   font-family: inherit;
   margin: 0; }
+  @media only screen and (max-width: 37.5rem) {
+    .dropdown .dropbtn {
+      padding-right: 0.8rem;
+      padding-left: 0.8rem; } }
 
 .dropdown {
   float: right;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-right: -2rem; }
+  @media only screen and (max-width: 37.5rem) {
+    .dropdown {
+      margin-right: -1rem; } }
   .dropdown--link {
     float: none;
     color: #f9f7f6;
@@ -113,16 +117,28 @@ body {
   display: flex;
   flex: 0 0 70%;
   align-items: center; }
+  @media only screen and (max-width: 37.5rem) {
+    .sitePart {
+      order: 1;
+      flex: 0 0 100%; } }
 
 .userPart {
   display: flex;
   flex: 0 0 30%;
   justify-content: flex-end; }
+  @media only screen and (max-width: 37.5rem) {
+    .userPart {
+      padding-top: 3rem;
+      flex: 0 0 100%; } }
 
 .nav {
   display: flex;
   list-style: none;
   font-size: 1.4rem; }
+  @media only screen and (max-width: 37.5rem) {
+    .nav {
+      flex-wrap: wrap;
+      align-content: space-around; } }
   .nav__user {
     align-self: center;
     padding-left: 2rem;
@@ -134,6 +150,7 @@ body {
       list-style: none;
       text-decoration: none; }
     .nav__item--icon {
+      cursor: pointer;
       fill: #f9f7f6;
       align-self: center;
       height: 2.3rem;
@@ -143,15 +160,29 @@ body {
     .nav__item--logo {
       height: 6rem;
       align-self: center; }
+      @media only screen and (max-width: 37.5rem) {
+        .nav__item--logo {
+          height: 4rem; } }
   .nav__item:not(:last-child) {
     padding-right: 1.5rem;
     padding-left: 1.5rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .nav__item:not(:last-child) {
+        padding-right: 0.8rem;
+        padding-left: 0.8rem; } }
   .nav__item:last-child {
     align-self: center;
     padding-right: 1.5rem;
     padding-left: 5rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .nav__item:last-child {
+        padding-right: 0.8rem;
+        padding-left: 2.5rem; } }
   .nav__item:first-child {
     padding-right: 2rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .nav__item:first-child {
+        padding-right: 1rem; } }
   .nav__item:not(:first-child) {
     align-self: center; }
 
@@ -159,4 +190,140 @@ body {
   border-left: 0.1rem solid #f9f7f6;
   height: 3.5rem;
   justify-self: center; }
+
+.footer {
+  grid-column: 1/-1;
+  background-color: #422671;
+  display: grid;
+  column-gap: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  font-size: 1.3rem;
+  color: #f9f7f6;
+  padding-right: 2rem;
+  padding-left: 2rem; }
+  @media only screen and (max-width: 37.5rem) {
+    .footer {
+      grid-row: 6/7; } }
+  .footer__icon {
+    fill: #f9f7f6;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: 1.5rem;
+    margin-left: 2rem; }
+  .footer__history {
+    margin-top: 3rem;
+    align-self: center;
+    text-align: right; }
+  .footer__copyright {
+    margin-top: 3rem;
+    align-self: center;
+    text-align: right; }
+    .footer__copyright--date {
+      margin-top: 3rem;
+      text-align: center; }
+  .footer__info {
+    padding-top: 2rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .footer__info {
+        padding-top: 1rem; } }
+    .footer__info--tel {
+      padding-bottom: 2.5rem; }
+      .footer__info--tel-link, .footer__info--tel-link:link, .footer__info--tel-link:visited {
+        text-decoration: none;
+        color: #f9f7f6; }
+    .footer__info--address {
+      padding-bottom: 3rem; }
+    .footer__info--socialmedia {
+      text-align: center;
+      padding-bottom: 3rem; }
+
+.login {
+  grid-column: 1/-1;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  grid-template-rows: min-content min-content;
+  column-gap: 3rem; }
+  .login__header {
+    margin-right: 3rem;
+    font-size: 2rem;
+    grid-column: 1 / span 1; }
+  .login__img {
+    margin-right: 3rem;
+    margin-top: 2rem;
+    grid-column: 1 / span 1;
+    width: 45rem;
+    height: 40rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .login__img {
+        display: none; } }
+  .login__form {
+    padding-bottom: 3rem;
+    grid-column: 2 / span 1;
+    align-self: center; }
+    @media only screen and (max-width: 37.5rem) {
+      .login__form {
+        grid-column: 1 / span 1;
+        margin-right: 3rem;
+        padding-top: 1rem; } }
+    .login__form--password {
+      display: flex;
+      align-items: center; }
+    .login__form--input {
+      width: 70%;
+      font-family: inherit;
+      font-size: 1.5rem;
+      padding: 0.7rem 2rem;
+      margin: 1.5rem 0;
+      border: none;
+      border-bottom: 0.1rem solid #333;
+      outline: none; }
+      @media only screen and (max-width: 37.5rem) {
+        .login__form--input {
+          width: 60%; } }
+    .login__form--passwordinput {
+      margin-left: -2rem; }
+    .login__form--eyebtn {
+      background-color: inherit;
+      height: 2rem;
+      border: none;
+      cursor: pointer; }
+      .login__form--eyebtn:focus {
+        outline: none; }
+    .login__form--line {
+      margin: 3rem 0 3rem 5rem;
+      color: #6d5d4b; }
+      @media only screen and (max-width: 37.5rem) {
+        .login__form--line {
+          display: none; } }
+    .login__form--link, .login__form--link:link, .login__form--link:visited {
+      color: #fec859;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 3rem 0;
+      text-decoration: none; }
+    .login__form--icon {
+      fill: #6d5d4b;
+      width: 2rem;
+      height: 2rem; }
+
+.btn {
+  margin: 2rem 0;
+  padding: 0.7rem 4rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  font-family: inherit;
+  cursor: pointer; }
+  .btn-primary {
+    background-color: #ff3e96;
+    color: #f9f7f6; }
+  .btn-secondary {
+    background-color: #f9f7f6;
+    color: #333; }
+  .btn-outline {
+    border: 0.1rem solid #333;
+    background-color: inherit;
+    color: #fec859; }
 

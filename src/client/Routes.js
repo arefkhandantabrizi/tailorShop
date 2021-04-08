@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
+import Footer from "./components/footer";
 import Header from "./components/header";
 import requireAuth from "./components/hocs/requireAuth";
 import Buyer from "./pages/buyer";
@@ -21,6 +22,7 @@ export default () => {
         <Redirect from="/" exact to="/home" />
         <Redirect to="/notFound" />
       </Switch>
+      <Footer />
     </Fragment>
   );
 };

@@ -1,6 +1,7 @@
 .navbar {
   grid-column: 1/-1;
   background-color: $color-primary;
+  min-height: 7rem;
 }
 
 .dropdown {
@@ -17,11 +18,20 @@
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+
+  @media only screen and (max-width: $bp-small) {
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
+  }
 }
 
 .dropdown {
   float: right;
   overflow: hidden;
+  margin-right: -2rem;
+  @media only screen and (max-width: $bp-small) {
+    margin-right: -1rem;
+  }
 
   &--link {
     float: none;
@@ -55,18 +65,33 @@
   display: flex;
   flex: 0 0 70%;
   align-items: center;
+
+  @media only screen and (max-width: $bp-small) {
+    order: 1;
+    flex: 0 0 100%;
+  }
 }
 
 .userPart {
   display: flex;
   flex: 0 0 30%;
   justify-content: flex-end;
+
+  @media only screen and (max-width: $bp-small) {
+    padding-top: 3rem;
+    flex: 0 0 100%;
+  }
 }
 
 .nav {
   display: flex;
   list-style: none;
   font-size: 1.4rem;
+
+  @media only screen and (max-width: $bp-small) {
+    flex-wrap: wrap;
+    align-content: space-around;
+  }
 
   &__user {
     align-self: center;
@@ -86,6 +111,7 @@
     }
 
     &--icon {
+      cursor: pointer;
       fill: $color-grey-light-1;
       align-self: center;
       height: 2.3rem;
@@ -99,22 +125,37 @@
     &--logo {
       height: 6rem;
       align-self: center;
+      @media only screen and (max-width: $bp-small) {
+        height: 4rem;
+      }
     }
   }
 
   &__item:not(:last-child) {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
+
+    @media only screen and (max-width: $bp-small) {
+      padding-right: 0.8rem;
+      padding-left: 0.8rem;
+    }
   }
 
   &__item:last-child {
     align-self: center;
     padding-right: 1.5rem;
     padding-left: 5rem;
+    @media only screen and (max-width: $bp-small) {
+      padding-right: 0.8rem;
+      padding-left: 2.5rem;
+    }
   }
 
   &__item:first-child {
     padding-right: 2rem;
+    @media only screen and (max-width: $bp-small) {
+      padding-right: 1rem;
+    }
   }
 
   &__item:not(:first-child) {

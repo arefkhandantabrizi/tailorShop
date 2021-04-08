@@ -1,0 +1,64 @@
+.footer {
+  grid-column: 1/-1;
+  background-color: $color-primary;
+  display: grid;
+  column-gap: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  font-size: 1.3rem;
+  color: $color-grey-light-1;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  @media only screen and (max-width: $bp-small) {
+    grid-row: 6/7;
+  }
+
+  &__icon {
+    fill: $color-grey-light-1;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+  }
+
+  &__history {
+    margin-top: 3rem;
+    align-self: center;
+    text-align: right;
+  }
+
+  &__copyright {
+    margin-top: 3rem;
+    align-self: center;
+    text-align: right;
+
+    &--date {
+      margin-top: 3rem;
+      text-align: center;
+    }
+  }
+  &__info {
+    @media only screen and (max-width: $bp-small) {
+      padding-top: 1rem;
+    }
+    padding-top: 2rem;
+
+    &--tel {
+      padding-bottom: 2.5rem;
+
+      &-link,
+      &-link:link,
+      &-link:visited {
+        text-decoration: none;
+        color: $color-grey-light-1;
+      }
+    }
+
+    &--address {
+      padding-bottom: 3rem;
+    }
+    &--socialmedia {
+      text-align: center;
+      padding-bottom: 3rem;
+    }
+  }
+}
