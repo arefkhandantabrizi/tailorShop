@@ -1,6 +1,16 @@
-@import "_font";
-@import "_base";
-@import "_header";
-@import "_footer";
-@import "_login";
-@import "_button";
+@import "./abstracts/variables";
+
+@import "./base/font";
+@import "./base/typography";
+@import "./base/base";
+
+@import "./layout/container";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/homeHeader";
+
+@import "./pages/login";
+@import "./pages//home";
+
+@import "./components/button";
+@import "./components/error";

@@ -1,0 +1,60 @@
+.btn {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 0.7rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: $border-radius;
+  font-size: 1.4rem;
+  font-family: inherit;
+  cursor: pointer;
+  width: 10.4rem;
+
+  &-primary {
+    background-color: $color-tertiary;
+    color: $color-gray-light-1;
+    &-medium {
+      width: 13rem;
+      background-color: $color-tertiary;
+      color: $color-gray-light-1;
+    }
+    &-large {
+      width: 17rem;
+      background-color: $color-tertiary;
+      color: $color-gray-light-1;
+    }
+  }
+
+  &-secondary {
+    background-color: $color-gray-light-1;
+    color: $color-gray-dark-3;
+    &-medium {
+      width: 13rem;
+      background-color: $color-gray-light-1;
+      color: $color-gray-dark-3;
+    }
+    &-large {
+      width: 17rem;
+      background-color: $color-gray-light-1;
+      color: $color-gray-dark-3;
+    }
+  }
+
+  &-outline {
+    border: 0.1rem solid $color-gray-dark-3;
+    background-color: inherit;
+    color: $color-secondary;
+    &-medium {
+      width: 13rem;
+      border: 0.1rem solid $color-gray-dark-3;
+      background-color: inherit;
+      color: $color-secondary;
+    }
+    &-large {
+      width: 17rem;
+      border: 0.1rem solid $color-gray-dark-3;
+      background-color: inherit;
+      color: $color-secondary;
+    }
+  }
+}

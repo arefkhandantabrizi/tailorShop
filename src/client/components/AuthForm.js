@@ -23,9 +23,35 @@ class AuthForm extends Component {
   renderError() {
     return (
       <div className="error">
-        {this.props.errors.map((error) => (
-          <div key={error}>{error}</div>
-        ))}
+        {this.props.errors.map((error) => {
+          switch (error) {
+            case "user validation failed: username: username must be longer than 5 characters.":
+              return (
+                <div key={error}>نام کاربری باید بیشتر از ۵ کاراکتر باشد</div>
+              );
+            case "user validation failed: password: password must be longer than 5 characters.":
+              return (
+                <div key={error}>رمزعبور باید بیشتر از ۵ کاراکتر باشد</div>
+              );
+            case "You must provide an username and password.":
+              return (
+                <div key={error}>
+                  وارد کردن نام کاربری و رمزعبور اجباری است.
+                </div>
+              );
+            case "username in use":
+              return (
+                <div key={error}>
+                  این نام کاربری قبلا استفاده شده است لطفا نام کاربری دیگری وارد
+                  کنید.
+                </div>
+              );
+            case `Unexpected error value: "نام کاربری یا رمز عبور اشتباه است."`:
+              return <div key={error}>نام کاربری یا رمز عبور اشتباه است. </div>;
+            default:
+              return <div key={error}>{error}</div>;
+          }
+        })}
       </div>
     );
   }
@@ -39,6 +65,22 @@ class AuthForm extends Component {
       iconName = "icon-eye";
     }
     this.setState({ iconName });
+  }
+
+  renderLink() {
+    if (this.props.buttonText === "ورود") {
+      return (
+        <Link className={this.props.linkClassName} to="/register">
+          حساب کاربری ندارید؟ حساب خود را ایجاد کنید.
+        </Link>
+      );
+    } else {
+      return (
+        <Link className={this.props.linkClassName} to="/login">
+          ورود به حساب کاربری
+        </Link>
+      );
+    }
   }
 
   render() {
@@ -75,14 +117,12 @@ class AuthForm extends Component {
           {this.renderError()}
 
           <button type="submit" className={this.props.buttonClassName}>
-            ورود
+            {this.props.buttonText}
           </button>
         </form>
 
         <hr className={this.props.lineClassName} />
-        <Link className={this.props.linkClassName} to="/register">
-          حساب کاربری ندارید؟ حساب خود را ایجاد کنید.
-        </Link>
+        {this.renderLink()}
       </div>
     );
   }

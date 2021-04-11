@@ -5,7 +5,7 @@
   column-gap: 5rem;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   font-size: 1.3rem;
-  color: $color-grey-light-1;
+  color: $color-gray-light-1;
   padding-right: 2rem;
   padding-left: 2rem;
   @media only screen and (max-width: $bp-small) {
@@ -13,7 +13,7 @@
   }
 
   &__icon {
-    fill: $color-grey-light-1;
+    fill: $color-gray-light-1;
     width: 2.5rem;
     height: 2.5rem;
     margin-top: 1.5rem;
@@ -43,13 +43,13 @@
     padding-top: 2rem;
 
     &--tel {
-      padding-bottom: 2.5rem;
+      // padding-bottom: 2.5rem;
 
       &-link,
       &-link:link,
       &-link:visited {
         text-decoration: none;
-        color: $color-grey-light-1;
+        color: $color-gray-light-1;
       }
     }
 

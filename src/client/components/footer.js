@@ -33,7 +33,7 @@ const Footer = () => {
           خراسان رضوی - کاشمر
         </div>
         <div className="footer__info--socialmedia">
-          <p>شما می توانید ما را در شبکه های اجتماعی دنبال کنید</p>
+          <p>ما را در شبکه های اجتماعی دنبال کنید</p>
           <a href="https://www.instagram.com/gallerymelina.ir/" target="_blank">
             <Icon name="icon-instagram" className="footer__icon" />
           </a>

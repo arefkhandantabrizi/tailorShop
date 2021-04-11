@@ -1,0 +1,26 @@
+body {
+  font-family: $font-primary;
+  // color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.6;
+  direction: rtl;
+}
+
+.heading-primary {
+  margin-right: 3rem;
+  font-size: 2rem;
+  color: $color-gray-dark-2;
+}
+.heading-secondary {
+  margin-right: 3rem;
+  font-size: 1.7rem;
+  color: $color-gray-dark-2;
+}
+
+.paragraph-starter {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+  font-size: 1.4rem;
+  color: $color-tertiary;
+}

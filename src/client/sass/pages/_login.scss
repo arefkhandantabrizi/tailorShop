@@ -4,7 +4,9 @@
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
-  grid-template-rows: min-content min-content;
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: min-content min-content;
+  }
   column-gap: 3rem;
 
   &__header {
@@ -15,16 +17,12 @@
   &__img {
     @media only screen and (max-width: $bp-small) {
       display: none;
-
-      // width: 30rem;
-      // height: 30rem;
-      // margin-top: 0.2rem;
     }
     margin-right: 3rem;
     margin-top: 2rem;
     grid-column: 1 / span 1;
-    width: 45rem;
-    height: 40rem;
+    width: 40rem;
+    height: 43rem;
   }
   &__form {
     padding-bottom: 3rem;
@@ -32,7 +30,7 @@
     @media only screen and (max-width: $bp-small) {
       grid-column: 1 / span 1;
       margin-right: 3rem;
-      padding-top: 1rem;
+      padding-top: 3rem;
     }
     grid-column: 2 / span 1;
     align-self: center;
@@ -46,9 +44,9 @@
       @media only screen and (max-width: $bp-small) {
         width: 60%;
       }
-      width: 70%;
+      width: 60%;
       font-family: inherit;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       padding: 0.7rem 2rem;
       margin: 1.5rem 0;
       border: none;
@@ -60,9 +58,6 @@
       margin-left: -2rem;
     }
 
-    &--btn {
-      // font-weight: 700;
-    }
     &--eyebtn {
       background-color: inherit;
       height: 2rem;
@@ -79,7 +74,7 @@
         display: none;
       }
       margin: 3rem 0 3rem 5rem;
-      color: $color-grey-dark-2;
+      color: $color-gray-dark-2;
     }
 
     &--link,
@@ -93,7 +88,7 @@
     }
 
     &--icon {
-      fill: $color-grey-dark-2;
+      fill: $color-gray-dark-2;
       width: 2rem;
       height: 2rem;
     }

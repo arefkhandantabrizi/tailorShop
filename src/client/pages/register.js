@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import { graphql } from "@apollo/client/react/hoc";
-import mutation from "../mutations/loginMutation";
+import mutation from "../mutations/signupMuatation";
 import query from "../queries/currentUser";
 import AuthForm from "../components/AuthForm";
-import "../img/login.webp";
+import "../img/register.webp";
 
-class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = { errors: [] };
@@ -20,7 +20,7 @@ class Login extends Component {
 
   componentDidUpdate(preProps) {
     if (this.props.data.user && !preProps.data.user) {
-      this.props.history.replace("/");
+      this.props.history.replace("/dashboard");
     }
   }
 
@@ -42,10 +42,10 @@ class Login extends Component {
   renderHeader() {
     return (
       <Helmet>
-        <title>تولیدی ملینا | ورود </title>
-        <meta property="og:title" content="ورود به حساب کاربری" />
+        <title>تولیدی ملینا | ثبت نام </title>
+        <meta property="og:title" content="ایجاد حساب کاربری" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://localhost:3000/login" />
+        <meta property="og:url" content="https://localhost:3000/register" />
         <meta
           property="og:image"
           content="https://localhost:3000/img/logo.webp"
@@ -61,14 +61,14 @@ class Login extends Component {
     return (
       <section className="login">
         {this.renderHeader()}
-        <h1 className="heading-primary">ورود به حساب کاربری</h1>
-        <img className="login__img" src="img/login.webp" alt="" />
+        <h1 className="heading-primary">ایجاد حساب کاربری</h1>
+        <img className="login__img" src="img/register.webp" alt="" />
         <AuthForm
           formClassName="login__form"
           inputClassName="login__form--input"
           passwordClassName="login__form--input login__form--passwordinput"
           buttonClassName="btn btn-primary login__form--btn"
-          buttonText="ورود"
+          buttonText="ثبت نام"
           eyebuttonClassName="login__form--eyebtn"
           lineClassName="login__form--line"
           iconClassName="login__form--icon"
@@ -81,4 +81,4 @@ class Login extends Component {
   }
 }
 
-export default graphql(query)(graphql(mutation)(Login));
+export default graphql(query)(graphql(mutation)(Register));
