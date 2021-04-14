@@ -21,7 +21,7 @@
 }
 
 .dropdown {
-  margin-right: -2rem;
+  margin: 0 -1.2rem;
   @media only screen and (max-width: $bp-small) {
     margin-right: -1rem;
   }
@@ -29,7 +29,7 @@
   &--link {
     float: none;
     color: $color-gray-light-1;
-    padding: 1.2rem 1.6rem;
+    padding: 1.2rem 1rem;
     text-decoration: none;
     display: block;
     text-align: center;
@@ -121,6 +121,7 @@
 
     &--logo {
       height: 6rem;
+      width: 6rem;
       align-self: center;
       @media only screen and (max-width: $bp-small) {
         height: 4rem;

@@ -4,7 +4,6 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import requireAuth from "./components/hocs/requireAuth";
 import Logout from "./components/logout";
-import Buyer from "./pages/buyer";
 import DashBoard from "./pages/dashboard";
 import Home from "./pages/Home";
 import Login from "./pages/login";
@@ -17,7 +16,6 @@ export default () => {
       <Header />
       <Switch>
         <Route exact path="/home" component={Home} />
-        <Route path="/buyers" component={Buyer} />
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
         <Route path="/register" component={Register} />

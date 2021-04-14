@@ -44,8 +44,6 @@
       margin-right: 2rem;
       align-self: flex-start;
       text-decoration: none;
-
-      // padding-right: 2rem;
     }
   }
 
@@ -69,7 +67,7 @@
       clip-path: circle(50% at 50% 50%);
 
       background-color: $color-secondary;
-      color: $color-white;
+      color: $color-gray-dark-3;
     }
     &--text {
       grid-column: 2/3;
@@ -84,7 +82,7 @@
   }
 
   &__customers {
-    padding: 3rem 0;
+    padding-top: 3rem;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(2, max-content);
@@ -184,35 +182,266 @@
   }
   &__gallery {
     background-color: $color-primary;
-    height: 80rem;
+    padding-top: 10rem;
+    @media only screen and (max-width: $bp-small) {
+      padding-top: 23rem;
+    }
+    text-align: center;
+    padding-bottom: 3rem;
+
+    &--all,
+    &--all:link,
+    &--all:visited {
+      color: $color-secondary;
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+
+    &--items {
+      margin: 0 5rem;
+      padding: 0 5rem;
+      @media only screen and (max-width: $bp-small) {
+        padding: 0 9rem;
+        row-gap: 3rem;
+      }
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      column-gap: 12rem;
+
+      &-item {
+        margin: 2rem 0;
+        background-color: $color-gray-light-1;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 3.5rem;
+
+        &-img {
+          grid-column: 1 / span 2;
+          grid-row: 1 / 2;
+          background-color: $color-gray-light-2;
+          height: 30rem;
+        }
+
+        &-description {
+          padding: 5rem 0;
+          grid-column: 1 / span 2;
+          font-size: 1.4rem;
+          align-self: center;
+        }
+
+        &-name {
+          grid-column: 1 / span 2;
+          grid-row: 1 / 2;
+          justify-self: center;
+          align-self: end;
+          width: 80%;
+          font-family: $font-display;
+          font-size: 1.6rem;
+          font-weight: 400;
+          color: $color-gray-light-1;
+          background-color: $color-gray-dark-3;
+          text-align: center;
+          padding: 1.25rem;
+          transform: translateY(50%);
+          z-index: 3;
+        }
+
+        &-btn,
+        &-btn:link,
+        &-btn:visited {
+          grid-column: 1 / span 2;
+          text-decoration: none;
+          background-color: $color-secondary;
+          color: $color-gray-dark-3;
+          font-size: 1.6rem;
+          padding: 1.25rem 0;
+        }
+      }
+    }
+
+    &--header {
+      margin-bottom: 1rem;
+    }
+    &--starter {
+      color: $color-secondary;
+      margin-right: 0;
+    }
+    &--text {
+      margin-bottom: 1rem;
+      color: $color-gray-light-1;
+    }
   }
   &__story {
+    padding: 2rem 0;
     background-color: $color-gray-light;
-    height: 60rem;
+    &--header {
+      margin-bottom: 1rem;
+    }
+
+    &--starter {
+      margin-right: 0;
+    }
+
+    &--text {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: $color-gray-dark-3;
+    }
+
+    &--container {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 5rem;
+      margin-bottom: 3rem;
+    }
   }
   &__videos {
     background-color: $color-primary;
-    height: 61.7rem;
     display: grid;
+    height: 60rem;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 49rem 45rem 15rem;
+    grid-template-rows: min-content max-content max-content max-content;
+
+    &--container {
+      grid-column: 1 / -1;
+      margin: 3rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+
+    &--video {
+      height: 20rem;
+      width: 20rem;
+      background-color: $color-gray-light-2;
+      grid-row: 1/2;
+    }
+
+    &--btn,
+    &--btn:link,
+    &--btn:visited {
+      text-decoration: none;
+      grid-row: 2/3;
+    }
+
+    &--wrapper {
+      margin: 3rem;
+      display: grid;
+      column-gap: 7rem;
+      justify-items: center;
+    }
+
+    &--text {
+      grid-column: 1/13;
+      text-align: center;
+    }
+    &--starter {
+      margin-right: 0;
+      color: $color-secondary;
+    }
+    &--header {
+      color: $color-gray-light-1;
+    }
   }
   &__register {
     grid-column: 2/13;
-    grid-row: 2/3;
     background-color: $color-gray-light;
-    height: 45rem;
     z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 5rem;
+
+    &--text {
+      align-self: center;
+      font-size: 1.4rem;
+      margin-bottom: 3rem;
+    }
+
+    &--starter {
+      padding-top: 1rem;
+    }
+
+    &--header {
+      margin-right: 2rem;
+
+      color: $color-gray-dark-3;
+      margin-bottom: 2rem;
+    }
+
+    &--paragraph {
+      margin-right: 2rem;
+    }
+
+    &--img {
+      height: 30rem;
+      width: 70%;
+      background-color: $color-gray-dark-2;
+      margin: 3rem;
+    }
+
+    &-right {
+      grid-column: 1/2;
+      align-self: center;
+    }
+    &-left {
+      grid-column: 2/3;
+      align-self: center;
+    }
   }
   &__login {
     grid-column: 2/13;
-    grid-row: 3/4;
     background-color: $color-primary;
-    height: 15rem;
     z-index: 10;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    &--text {
+      grid-column: 1/2;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+    }
+    &--starter {
+      color: $color-secondary;
+      margin-right: 0;
+      margin-top: 2rem;
+    }
+    &--header {
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      color: $color-gray-light-1;
+    }
+    &--btn,
+    &--btn:link,
+    &--btn:visited {
+      grid-column: 2/3;
+      text-decoration: none;
+      justify-self: right;
+      align-self: center;
+    }
   }
   &__support {
     background-color: $color-gray-dark-1;
-    height: 70rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    &--text {
+      padding-top: 35rem;
+      padding-bottom: 5rem;
+      grid-column: 2/ -1;
+      margin-right: 2rem;
+      @media only screen and (max-width: $bp-small) {
+        padding-top: 45rem;
+      }
+    }
+
+    &--starter {
+      margin-right: 0;
+    }
+
+    &--header {
+      color: $color-gray-dark-3;
+    }
   }
 }

@@ -9,6 +9,7 @@
       format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("../fonts/ttf/iransansdnbold.ttf")
       format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -23,6 +24,8 @@
       format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("../fonts/ttf/iransansdnlight.ttf")
       format("truetype");
+
+  font-display: swap;
 }
 
 @font-face {
@@ -36,4 +39,6 @@
       format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("../fonts/ttf/iransansdn.ttf")
       format("truetype");
+
+  font-display: swap;
 }
