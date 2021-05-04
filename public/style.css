@@ -653,6 +653,42 @@ html {
     .home__support--header {
       color: #333; }
 
+.order {
+  grid-column: 1/-1;
+  margin-top: 3rem; }
+  .order-types {
+    margin: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    column-gap: 10rem; }
+  .order-type {
+    display: grid; }
+  .order-image {
+    height: 40rem;
+    background-position: 50%; }
+    @media only screen and (max-width: 37.5rem) {
+      .order-image {
+        background-position: top; } }
+    .order-image--boy {
+      background-image: url(img/boy.webp);
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .order-image--girl {
+      background-image: url(img/girl.webp);
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .order-image--fabric {
+      background-image: url(img/fabric.webp);
+      background-size: contain;
+      background-repeat: no-repeat; }
+  .order-btn, .order-btn:link, .order-btn:visited {
+    text-decoration: none;
+    margin: -5rem auto 5rem auto; }
+    @media only screen and (max-width: 37.5rem) {
+      .order-btn, .order-btn:link, .order-btn:visited {
+        padding: 1.3rem 3rem;
+        margin: -7rem auto 10rem auto; } }
+
 .btn {
   text-align: center;
   margin-bottom: 2rem;

@@ -10,7 +10,7 @@ import { StaticRouter } from "react-router-dom";
 import { Html } from "./helpers/html";
 import createClient from "./helpers/createClinet";
 import Routes from "./client/Routes";
-import headerLogo from "./client/img/headLogo.webp";
+import "./client/img/headLogo.webp";
 
 const app = express();
 

@@ -1,0 +1,48 @@
+.order {
+  grid-column: 1/-1;
+  margin-top: 3rem;
+
+  &-types {
+    margin: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    column-gap: 10rem;
+  }
+  &-type {
+    display: grid;
+  }
+  &-image {
+    height: 40rem;
+    background-position: 50%;
+
+    @media only screen and (max-width: $bp-small) {
+      background-position: top;
+    }
+
+    &--boy {
+      background-image: url("../../../public/img/boy.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &--girl {
+      background-image: url("../../../public/img/girl.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &--fabric {
+      background-image: url("../../../public/img/fabric.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  &-btn,
+  &-btn:link,
+  &-btn:visited {
+    text-decoration: none;
+    margin: -5rem auto 5rem auto;
+    @media only screen and (max-width: $bp-small) {
+      padding: 1.3rem 3rem;
+      margin: -7rem auto 10rem auto;
+    }
+  }
+}
