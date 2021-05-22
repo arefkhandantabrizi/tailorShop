@@ -58,7 +58,10 @@ class Header extends Component {
               <div className="dropdown">
                 <div className="nav__item--link dropbtn">سفارش لباس فرم</div>
                 <div className="dropdown-content">
-                  <Link className="nav__item--link dropdown--link" to="/order">
+                  <Link
+                    className="nav__item--link dropdown--link"
+                    to="/order-boy-uniform"
+                  >
                     لباس فرم پسرانه
                   </Link>
                   <Link className="nav__item--link dropdown--link" to="/order">

@@ -4,16 +4,13 @@ import "../img/girl.webp";
 import "../img/boy.webp";
 import "../img/fabric.webp";
 
-const Order = (props) => {
+const Order = () => {
   return (
     <section className="order">
-      <h1 className="heading-primary">سفارش لباس فرم</h1>
+      <h1 className="heading-primary"> سفارش لباس فرم و پارچه</h1>
       <div className="order-types">
         <div className="order-type">
-          <div
-            // onClick={() => props.history.push("/order-girl-uniform")}
-            className="order-image order-image--girl"
-          />
+          <div className="order-image order-image--girl" />
           <Link
             to="/order-girl-uniform"
             className="btn btn-primary-medium order-btn"

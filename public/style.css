@@ -689,6 +689,42 @@ html {
         padding: 1.3rem 3rem;
         margin: -7rem auto 10rem auto; } }
 
+.order-boy-uniform {
+  grid-column: 1 / -1; }
+  .order-boy-uniform--heading {
+    margin: 2rem 3rem; }
+
+.no-warning {
+  display: none; }
+
+.order-warning {
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  background-color: #e3e3e3;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center; }
+  .order-warning--text {
+    grid-column: 1/12;
+    text-align: center;
+    color: #d80101; }
+  .order-warning--link, .order-warning--link:link, .order-warning--link:visited {
+    color: #d80101;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none; }
+
+.icon-container {
+  grid-column: 12/-1;
+  justify-self: end;
+  margin-left: 3rem; }
+
+.order-icon {
+  cursor: pointer;
+  width: 2.3rem;
+  height: 2.3rem;
+  margin: 1rem 0 0 0; }
+
 .btn {
   text-align: center;
   margin-bottom: 2rem;
