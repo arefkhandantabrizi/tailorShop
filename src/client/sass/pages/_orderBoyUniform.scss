@@ -11,8 +11,7 @@
 }
 
 .order-warning {
-  padding: 0.5rem 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   background-color: $color-gray-dark-1;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -22,6 +21,7 @@
     grid-column: 1/12;
     text-align: center;
     color: $color-quaternary;
+    font-weight: 450;
   }
   &--link,
   &--link:link,
@@ -41,7 +41,45 @@
 
 .order-icon {
   cursor: pointer;
-  width: 2.3rem;
-  height: 2.3rem;
-  margin: 1rem 0 0 0;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 1rem;
+}
+
+.order-label {
+  font-size: 1.4rem;
+  padding: 1rem 0rem 0rem 1.5rem;
+  margin-right: 3rem;
+}
+
+.order__select {
+  display: block;
+  margin: 2rem 0rem;
+  &--grade {
+    width: 8rem;
+    font-family: $font-primary;
+  }
+  &--school {
+    margin-right: 1.59rem;
+    width: 20rem;
+    font-family: $font-primary;
+  }
+}
+
+.order__items {
+  display: flex;
+  justify-content: space-around;
+}
+
+.order__pants {
+  margin: 15rem 0 25rem 0;
+}
+.order__pants--hidden {
+  display: none;
+}
+.order__shirt {
+  margin: 15rem 0 25rem 0;
+}
+.order__shirt--hidden {
+  display: none;
 }

@@ -343,9 +343,9 @@ html {
         grid-template-rows: minmax(40vh, max-content); } }
     .home__header--image {
       grid-column: 2/12;
-      background-image: url("../../../public/img/register.webp");
+      background-image: url("../../../public/img/home.webp");
       background-size: cover;
-      background-position: 50%;
+      background-position: center;
       display: grid;
       grid-template-columns: repeat(10, 1fr);
       align-items: flex-end; }
@@ -698,8 +698,7 @@ html {
   display: none; }
 
 .order-warning {
-  padding: 0.5rem 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   background-color: #e3e3e3;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -707,7 +706,8 @@ html {
   .order-warning--text {
     grid-column: 1/12;
     text-align: center;
-    color: #d80101; }
+    color: #d80101;
+    font-weight: 450; }
   .order-warning--link, .order-warning--link:link, .order-warning--link:visited {
     color: #d80101;
     font-weight: 600;
@@ -721,9 +721,41 @@ html {
 
 .order-icon {
   cursor: pointer;
-  width: 2.3rem;
-  height: 2.3rem;
-  margin: 1rem 0 0 0; }
+  width: 2rem;
+  height: 2rem;
+  margin-top: 1rem; }
+
+.order-label {
+  font-size: 1.4rem;
+  padding: 1rem 0rem 0rem 1.5rem;
+  margin-right: 3rem; }
+
+.order__select {
+  display: block;
+  margin: 2rem 0rem; }
+  .order__select--grade {
+    width: 8rem;
+    font-family: iransansdn, tahoma; }
+  .order__select--school {
+    margin-right: 1.59rem;
+    width: 20rem;
+    font-family: iransansdn, tahoma; }
+
+.order__items {
+  display: flex;
+  justify-content: space-around; }
+
+.order__pants {
+  margin: 15rem 0 25rem 0; }
+
+.order__pants--hidden {
+  display: none; }
+
+.order__shirt {
+  margin: 15rem 0 25rem 0; }
+
+.order__shirt--hidden {
+  display: none; }
 
 .btn {
   text-align: center;
