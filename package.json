@@ -16,6 +16,7 @@
     "dev:build-client": "webpack --config webpack.client.js --watch",
     "heroku-postbuild": "echo Skip build on Heroku",
     "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node build/bundle.js",
   },
   "keywords": [],
   "author": "",
