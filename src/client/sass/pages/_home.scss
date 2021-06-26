@@ -16,9 +16,9 @@
     }
     &--image {
       grid-column: 2/12;
-      background-image: url("../../../public/img/register.webp");
+      background-image: url("../../../public/img/home.webp");
       background-size: cover;
-      background-position: 50%;
+      background-position: center;
       display: grid;
       grid-template-columns: repeat(10, 1fr);
       align-items: flex-end;
