@@ -742,11 +742,20 @@ html {
     font-family: iransansdn, tahoma; }
 
 .order__items {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  column-gap: 12rem;
   justify-content: space-around; }
+  .order__items--pants {
+    display: flex;
+    flex-direction: column; }
+  .order__items--shirt {
+    display: flex;
+    flex-direction: column; }
 
 .order__pants {
-  margin: 15rem 0 25rem 0; }
+  margin: 3rem 3rem 3rem 0;
+  font-size: 1.6rem; }
 
 .order__pants--hidden {
   display: none; }
@@ -756,6 +765,57 @@ html {
 
 .order__shirt--hidden {
   display: none; }
+
+.order__image--pants {
+  align-self: center;
+  width: 30rem;
+  height: 40rem; }
+
+.order__image--shirt {
+  align-self: center;
+  width: 30rem;
+  height: 40rem; }
+
+.order__pants--seperator {
+  margin: 2rem 0rem 3rem 3rem; }
+
+.order__pants--details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  column-gap: 5rem; }
+
+.order__pants--data {
+  grid-column: 1 / span 1; }
+
+.order__pants--label {
+  margin-left: 3rem;
+  font-size: 1.4rem; }
+  .order__pants--label-1 {
+    margin-left: 3.412rem;
+    font-size: 1.4rem; }
+  .order__pants--label-2 {
+    margin-left: 3.031rem;
+    font-size: 1.4rem; }
+  .order__pants--label-3 {
+    margin-left: 4.112rem;
+    font-size: 1.4rem; }
+  .order__pants--label-4 {
+    margin-left: 4.89rem;
+    font-size: 1.4rem; }
+
+.order__pants--input {
+  font-size: 1.4rem;
+  font-family: iransansdn, tahoma;
+  margin: 1.5rem 0rem;
+  width: 20rem; }
+  .order__pants--input-small {
+    margin: 1.5rem 0rem;
+    width: 8rem;
+    font-size: 1.4rem;
+    font-family: iransansdn, tahoma; }
+
+.order__pants--btn {
+  grid-column: 1 / span 1; }
 
 .btn {
   text-align: center;

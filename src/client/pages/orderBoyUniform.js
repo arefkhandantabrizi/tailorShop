@@ -1,6 +1,9 @@
 import React, { Component, createRef } from "react";
 import { Link } from "react-router-dom";
 import OrderWarning from "../components/orderWarning";
+import pants from "../img/pants.webp";
+import shirt from "../img/shirt.webp";
+import { PersinaToEnglish, EnglishToPersian } from "../utility/convertor";
 
 const utilizeScroll = () => {
   const pantsRef = createRef();
@@ -70,22 +73,22 @@ class OrderBoyUniform extends Component {
         </div>
         <div className="order__items">
           <div className="order__items--pants">
-            <img src="" alt="" />
+            <img src="img/pants.webp" alt="" className="order__image--pants" />
             <Link
               to="#"
               onClick={this.pantsClick.bind(this)}
-              className="btn btn-primary-medium order-btn"
+              className="btn btn-primary-large order-btn"
             >
               سفارش شلوار
             </Link>
           </div>
 
           <div className="order__items--shirt">
-            <img src="" alt="" />
+            <img src="img/shirt.webp" alt="" className="order__image--shirt" />
             <Link
               to="#"
               onClick={this.shirtClick.bind(this)}
-              className="btn btn-primary-medium order-btn"
+              className="btn btn-primary-large order-btn"
             >
               سفارش بلوز
             </Link>
@@ -97,6 +100,36 @@ class OrderBoyUniform extends Component {
           className={this.state.pantsClassName}
         >
           سفارش شلوار
+          <hr className="order__pants--seperator" />
+          <div className="order__pants--details">
+            <div className="order__pants--data">
+              <label htmlFor="pantsHeight" className="order__pants--label-1">
+                قد شلوار
+              </label>
+              <input id="pantsHeight" className="order__pants--input" />
+            </div>
+            <div className="order__pants--data">
+              <label htmlFor="pantsHip" className="order__pants--label-2">
+                دور باسن
+              </label>
+              <input id="pantsHip" className="order__pants--input" />
+            </div>
+            <div className="order__pants--data">
+              <label htmlFor="pantsLeg" className="order__pants--label-3">
+                دور ران
+              </label>
+              <input id="pantsLeg" className="order__pants--input" />
+            </div>
+            <div className="order__pants--data">
+              <label htmlFor="pantsCount" className="order__pants--label-4">
+                تعداد
+              </label>
+              <input id="pantsCount" className="order__pants--input-small" />
+            </div>
+            <button className="btn btn-primary-large order__pants--btn">
+              افزودن به سبد خرید
+            </button>
+          </div>
         </div>
 
         <div
