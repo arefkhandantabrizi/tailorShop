@@ -783,6 +783,10 @@ html {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   column-gap: 5rem; }
+  @media only screen and (max-width: 37.5rem) {
+    .order__pants--details {
+      grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+      column-gap: 0rem; } }
 
 .order__pants--data {
   grid-column: 1 / span 1; }
@@ -807,7 +811,8 @@ html {
   font-size: 1.4rem;
   font-family: iransansdn, tahoma;
   margin: 1.5rem 0rem;
-  width: 20rem; }
+  padding: 0.5rem 1rem;
+  width: 7rem; }
   .order__pants--input-small {
     margin: 1.5rem 0rem;
     width: 8rem;
@@ -816,6 +821,17 @@ html {
 
 .order__pants--btn {
   grid-column: 1 / span 1; }
+
+.order__pants--image {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 5; }
+
+.order-count-label {
+  font-size: 1.8rem;
+  margin: 0 1rem; }
+
+.btn-count {
+  text-align: center; }
 
 .btn {
   text-align: center;
@@ -829,6 +845,19 @@ html {
   font-family: inherit;
   cursor: pointer;
   width: 10.4rem; }
+  .btn-disable {
+    background-color: #6d5d4b;
+    color: #f9f7f6; }
+    .btn-disable-xsmall {
+      width: 2.5rem;
+      padding: 0.2rem 0rem; }
+    .btn-disable-small {
+      width: 5rem;
+      padding: 0.4rem 1rem; }
+    .btn-disable-medium {
+      width: 13rem; }
+    .btn-disable-large {
+      width: 17rem; }
   .btn-primary {
     background-color: #ff3399;
     color: #f9f7f6; }
@@ -843,6 +872,11 @@ html {
   .btn-secondary {
     background-color: #f9f7f6;
     color: #333; }
+    .btn-secondary-small {
+      background-color: #f9f7f6;
+      color: #333;
+      width: 5rem;
+      padding: 0.4rem 1rem; }
     .btn-secondary-medium {
       width: 13rem;
       background-color: #f9f7f6;
@@ -854,6 +888,11 @@ html {
   .btn-tertiary {
     background-color: #fec859;
     color: #333; }
+    .btn-tertiary-small {
+      background-color: #fec859;
+      color: #333;
+      width: 2.5rem;
+      padding: 0.2rem 0rem; }
     .btn-tertiary-medium {
       width: 13rem;
       background-color: #fec859;
@@ -863,9 +902,15 @@ html {
       background-color: #fec859;
       color: #333; }
   .btn-outline {
-    border: 0.1rem solid #333;
+    border: 0.1rem solid #fec859;
     background-color: inherit;
-    color: #fec859; }
+    color: #333; }
+    .btn-outline-small {
+      border: 0.1rem solid #fec859;
+      background-color: inherit;
+      color: #333;
+      width: 2.5rem;
+      padding: 0.2rem 0rem; }
     .btn-outline-medium {
       width: 13rem;
       border: 0.1rem solid #333;

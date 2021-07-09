@@ -1,9 +1,16 @@
 import React, { Component, createRef } from "react";
 import { Link } from "react-router-dom";
 import OrderWarning from "../components/orderWarning";
+import { PersianToEnglish, EnglishToPersian } from "../utility/convertor";
 import pants from "../img/pants.webp";
 import shirt from "../img/shirt.webp";
-import { PersinaToEnglish, EnglishToPersian } from "../utility/convertor";
+import sleeve from "../img/sleeve.webp";
+import leg from "../img/leg.webp";
+import chest from "../img/chest.webp";
+import hip from "../img/hip.webp";
+import jacketheight from "../img/jacketheight.webp";
+import pantsheight from "../img/pantsheight.webp";
+import shoulder from "../img/shoulder.webp";
 
 const utilizeScroll = () => {
   const pantsRef = createRef();
@@ -27,15 +34,57 @@ class OrderBoyUniform extends Component {
     this.state = {
       pantsClassName: "order__pants--hidden",
       shirtClassName: "order__shirt--hidden",
+      count: 1,
+      pantsHeight: "",
+      pantsHip: "",
+      pantsLeg: "",
+      iamgeSource: "",
     };
     this.pantsScroll = utilizeScroll();
     this.shirtScroll = utilizeShirtScroll();
+    this.renderImage = this.renderImage.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  renderImage({ currentTarget: input }) {
+    const { id } = input;
+    switch (id) {
+      case "pantsHeight":
+        this.setState({ iamgeSource: "./img/pantsheight.webp" });
+        break;
+      case "pantsHip":
+        this.setState({ iamgeSource: "./img/hip.webp" });
+        break;
+      case "pantsLeg":
+        this.setState({ iamgeSource: "./img/leg.webp" });
+        break;
+    }
+  }
+
+  handleChange({ id, value }) {
+    const re = /^[0-9\b]+$/;
+    let newValue;
+    newValue = PersianToEnglish(value);
+    if (newValue === "" || re.test(newValue)) {
+      switch (id) {
+        case "pantsHeight":
+          this.setState({ pantsHeight: newValue });
+          break;
+        case "pantsHip":
+          this.setState({ pantsHip: newValue });
+          break;
+        case "pantsLeg":
+          this.setState({ pantsLeg: newValue });
+          break;
+      }
+    }
   }
 
   pantsClick() {
     this.setState({
       pantsClassName: "order__pants",
       shirtClassName: "order__shirt--hidden",
+      iamgeSource: "",
     });
     setTimeout(() => {
       this.pantsScroll.executeScroll();
@@ -46,13 +95,24 @@ class OrderBoyUniform extends Component {
     this.setState({
       pantsClassName: "order__pants--hidden",
       shirtClassName: "order__shirt",
+      iamgeSource: "",
     });
     setTimeout(() => {
       this.shirtScroll.executeShirtScroll();
     }, 1);
   }
 
+  decreaseCount() {
+    let { count } = this.state;
+    this.setState({ count: count - 1 });
+  }
+  increaseCount() {
+    let { count } = this.state;
+    this.setState({ count: count + 1 });
+  }
+
   render() {
+    const { count } = this.state;
     return (
       <section className="order-boy-uniform">
         <OrderWarning />
@@ -106,29 +166,86 @@ class OrderBoyUniform extends Component {
               <label htmlFor="pantsHeight" className="order__pants--label-1">
                 قد شلوار
               </label>
-              <input id="pantsHeight" className="order__pants--input" />
+              <input
+                id="pantsHeight"
+                className="order__pants--input"
+                value={EnglishToPersian(this.state.pantsHeight)}
+                onClick={(id) => this.renderImage(id)}
+                onChange={(e) => this.handleChange(e.target)}
+              />
             </div>
             <div className="order__pants--data">
               <label htmlFor="pantsHip" className="order__pants--label-2">
                 دور باسن
               </label>
-              <input id="pantsHip" className="order__pants--input" />
+              <input
+                id="pantsHip"
+                className="order__pants--input"
+                value={EnglishToPersian(this.state.pantsHip)}
+                onClick={(id) => this.renderImage(id)}
+                onChange={(e) => this.handleChange(e.target)}
+              />
             </div>
             <div className="order__pants--data">
               <label htmlFor="pantsLeg" className="order__pants--label-3">
                 دور ران
               </label>
-              <input id="pantsLeg" className="order__pants--input" />
+              <input
+                id="pantsLeg"
+                className="order__pants--input"
+                value={EnglishToPersian(this.state.pantsLeg)}
+                onClick={(id) => this.renderImage(id)}
+                onChange={(e) => this.handleChange(e.target)}
+              />
             </div>
             <div className="order__pants--data">
               <label htmlFor="pantsCount" className="order__pants--label-4">
                 تعداد
               </label>
-              <input id="pantsCount" className="order__pants--input-small" />
+              {count <= 4 ? (
+                <button
+                  className="btn btn-tertiary-small btn-count"
+                  onClick={this.increaseCount.bind(this)}
+                >
+                  +
+                </button>
+              ) : (
+                <button
+                  className="btn  btn-disable-xsmall"
+                  onClick={this.increaseCount.bind(this)}
+                  disabled={true}
+                >
+                  +
+                </button>
+              )}
+              <label className="order-count-label">
+                {EnglishToPersian(count.toString())}
+              </label>
+              {count > 1 ? (
+                <button
+                  className="btn btn-outline-small btn-count"
+                  onClick={this.decreaseCount.bind(this)}
+                >
+                  -
+                </button>
+              ) : (
+                <button
+                  className="btn btn-disable-xsmall"
+                  onClick={this.decreaseCount.bind(this)}
+                  disabled={true}
+                >
+                  -
+                </button>
+              )}
             </div>
             <button className="btn btn-primary-large order__pants--btn">
               افزودن به سبد خرید
             </button>
+            <img
+              src={this.state.iamgeSource}
+              alt=""
+              className="order__pants--image"
+            />
           </div>
         </div>
 

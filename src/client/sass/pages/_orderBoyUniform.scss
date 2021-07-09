@@ -114,6 +114,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   column-gap: 5rem;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    column-gap: 0rem;
+  }
 }
 .order__pants--data {
   grid-column: 1 / span 1;
@@ -144,8 +149,8 @@
   font-size: 1.4rem;
   font-family: $font-primary;
   margin: 1.5rem 0rem;
-
-  width: 20rem;
+  padding: 0.5rem 1rem;
+  width: 7rem;
 
   &-small {
     margin: 1.5rem 0rem;
@@ -158,4 +163,17 @@
 
 .order__pants--btn {
   grid-column: 1 / span 1;
+}
+
+.order__pants--image {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 5;
+}
+
+.order-count-label {
+  font-size: 1.8rem;
+  margin: 0 1rem;
+}
+.btn-count {
+  text-align: center;
 }

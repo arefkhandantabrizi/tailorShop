@@ -11,6 +11,26 @@
   cursor: pointer;
   width: 10.4rem;
 
+  &-disable {
+    background-color: $color-gray-dark-2;
+    color: $color-gray-light-1;
+    &-xsmall {
+      width: 2.5rem;
+      padding: 0.2rem 0rem;
+    }
+
+    &-small {
+      width: 5rem;
+      padding: 0.4rem 1rem;
+    }
+    &-medium {
+      width: 13rem;
+    }
+    &-large {
+      width: 17rem;
+    }
+  }
+
   &-primary {
     background-color: $color-tertiary;
     color: $color-gray-light-1;
@@ -29,6 +49,13 @@
   &-secondary {
     background-color: $color-gray-light-1;
     color: $color-gray-dark-3;
+
+    &-small {
+      background-color: $color-gray-light-1;
+      color: $color-gray-dark-3;
+      width: 5rem;
+      padding: 0.4rem 1rem;
+    }
     &-medium {
       width: 13rem;
       background-color: $color-gray-light-1;
@@ -44,6 +71,14 @@
   &-tertiary {
     background-color: $color-secondary;
     color: $color-gray-dark-3;
+
+    &-small {
+      background-color: $color-secondary;
+      color: $color-gray-dark-3;
+      width: 2.5rem;
+      padding: 0.2rem 0rem;
+    }
+
     &-medium {
       width: 13rem;
       background-color: $color-secondary;
@@ -57,9 +92,18 @@
   }
 
   &-outline {
-    border: 0.1rem solid $color-gray-dark-3;
+    border: 0.1rem solid $color-secondary;
     background-color: inherit;
-    color: $color-secondary;
+    color: $color-gray-dark-3;
+
+    &-small {
+      border: 0.1rem solid $color-secondary;
+      background-color: inherit;
+      color: $color-gray-dark-3;
+      width: 2.5rem;
+      padding: 0.2rem 0rem;
+    }
+
     &-medium {
       width: 13rem;
       border: 0.1rem solid $color-gray-dark-3;

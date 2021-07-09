@@ -24,7 +24,11 @@ const Footer = () => {
       <div className="footer__info">
         <div className="footer__info--tel">
           <Icon name="icon-phone-call" className="footer__icon" />
-          <a className="footer__info--tel-link" href="tel:+۹۸۹۰۲۲۸۵۹۸۴۶">
+          <a
+            className="footer__info--tel-link"
+            rel="noreferrer"
+            href="tel:+۹۸۹۰۲۲۸۵۹۸۴۶"
+          >
             ۰۹۰۲۲۸۵۹۸۴۶
           </a>
         </div>
@@ -34,13 +38,21 @@ const Footer = () => {
         </div>
         <div className="footer__info--socialmedia">
           <p>ما را در شبکه های اجتماعی دنبال کنید</p>
-          <a href="https://www.instagram.com/gallerymelina.ir/" target="_blank">
+          <a
+            href="https://www.instagram.com/gallerymelina.ir/"
+            rel="noreferrer"
+            target="_blank"
+          >
             <Icon name="icon-instagram" className="footer__icon" />
           </a>
-          <a href="https://t.me/tolidi_melina" target="_blank">
+          <a href="https://t.me/tolidi_melina" rel="noreferrer" target="_blank">
             <Icon name="icon-telegram" className="footer__icon" />
           </a>
-          <a href="https://www.aparat.com/tolidimelina" target="_blank">
+          <a
+            href="https://www.aparat.com/tolidimelina"
+            rel="noreferrer"
+            target="_blank"
+          >
             <Icon name="icon-film" className="footer__icon" />
           </a>
         </div>
