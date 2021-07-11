@@ -5,7 +5,10 @@ $color-primary: #422671;
 
 $color-secondary: #fec859;
 
-$color-tertiary: #ff3399;
+// $color-tertiary: #7d754a;
+// $color-tertiary: #b02068;
+// $color-tertiary: #ff3399;
+$color-tertiary: #d2287d;
 // $color-tertiary-dark: #42b0b4;
 
 $color-quaternary: #d80101;
@@ -33,3 +36,8 @@ $bp-larger: 75rem; // 1200px
 $bp-large: 62.5rem; // 1000px
 $bp-medium: 50rem; // 800px
 $bp-small: 37.5rem; // 600px
+
+//Loader
+$count: 10;
+$time: 2; //in seconds
+$size: 100;

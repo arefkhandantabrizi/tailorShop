@@ -23,7 +23,7 @@ const Footer = () => {
       </div>
       <div className="footer__info">
         <div className="footer__info--tel">
-          <Icon name="icon-phone-call" className="footer__icon" />
+          <Icon name="icon-phone-call-right" className="footer__icon" />
           <a
             className="footer__info--tel-link"
             rel="noreferrer"

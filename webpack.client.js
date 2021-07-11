@@ -1,13 +1,14 @@
 const path = require("path");
 const merge = require("webpack-merge");
 const baseConfig = require("./webpack.base.js");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const config = {
   /* Tell webpack the root file of our
      server application  */
-  mode: "development",
+  // mode: "development",
+  mode: "production",
 
   entry: "./src/client/client.js",
 

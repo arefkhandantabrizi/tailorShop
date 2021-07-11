@@ -5,7 +5,8 @@ const ComperssionWebpackPlugin = require("compression-webpack-plugin");
 module.exports = {
   /* Tell webpack to run babel on every file
      it runs through */
-  mode: "development",
+  // mode: "development",
+  mode: "production",
   plugins: [
     new MiniCssExtractPlugin({
       filename: "style.css",

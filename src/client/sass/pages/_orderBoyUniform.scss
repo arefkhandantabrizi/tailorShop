@@ -83,14 +83,15 @@
 }
 
 .order__pants {
-  margin: 3rem 3rem 3rem 0;
+  margin: 2rem 3rem 3rem 0;
   font-size: 1.6rem;
 }
 .order__pants--hidden {
   display: none;
 }
 .order__shirt {
-  margin: 15rem 0 25rem 0;
+  margin: 2rem 3rem 3rem 0;
+  font-size: 1.6rem;
 }
 .order__shirt--hidden {
   display: none;
@@ -145,29 +146,28 @@
     font-size: 1.4rem;
   }
 }
-.order__pants--input {
-  font-size: 1.4rem;
-  font-family: $font-primary;
-  margin: 1.5rem 0rem;
-  padding: 0.5rem 1rem;
-  width: 7rem;
 
-  &-small {
-    margin: 1.5rem 0rem;
-
-    width: 8rem;
-    font-size: 1.4rem;
-    font-family: $font-primary;
-  }
-}
-
-.order__pants--btn {
+.order__pants--btn,
+order__pants--btn:visited,
+order__pants--btn:link {
   grid-column: 1 / span 1;
+  text-decoration: none;
 }
 
 .order__pants--image {
   grid-column: 2 / span 1;
+  grid-row: 1 / span 4;
+  justify-self: center;
+  @media only screen and (max-width: $bp-small) {
+    grid-row: 1 / span 5;
+  }
+}
+.order__pants--text {
+  font-size: 1.4rem;
+  line-height: 2;
+  grid-column: 3 / span 1;
   grid-row: 1 / span 5;
+  margin-left: 3rem;
 }
 
 .order-count-label {
@@ -176,4 +176,34 @@
 }
 .btn-count {
   text-align: center;
+}
+
+.order__shirt--label {
+  margin-left: 3rem;
+  font-size: 1.4rem;
+
+  &-1 {
+    margin-left: 3.412rem;
+    font-size: 1.4rem;
+  }
+  &-2 {
+    margin-left: 2.5rem;
+    font-size: 1.4rem;
+  }
+  &-3 {
+    margin-left: 2.4rem;
+    font-size: 1.4rem;
+  }
+  &-4 {
+    margin-left: 2.2rem;
+    font-size: 1.4rem;
+  }
+  &-5 {
+    margin-left: 2.4rem;
+    font-size: 1.4rem;
+  }
+  &-6 {
+    margin-left: 4.89rem;
+    font-size: 1.4rem;
+  }
 }

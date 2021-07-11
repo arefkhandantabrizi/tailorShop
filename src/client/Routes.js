@@ -4,6 +4,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import requireAuth from "./components/hocs/requireAuth";
 import Logout from "./components/logout";
+import ScrollToTop from "./components/ScrollTop";
 import DashBoard from "./pages/dashboard";
 import Home from "./pages/Home";
 import Login from "./pages/login";
@@ -16,6 +17,7 @@ export default () => {
   return (
     <Fragment>
       <Header />
+      <ScrollToTop />
       <Switch>
         <Route exact path="/home" component={Home} />
         <Route path="/login" component={Login} />
